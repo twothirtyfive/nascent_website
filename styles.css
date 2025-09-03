@@ -1,0 +1,121 @@
+:root{
+    --bg: #ffffff;
+    --fg: #0f172a;      /* slate-900 */
+    --muted:#475569;    /* slate-600 */
+    --line:#e2e8f0;     /* slate-200 */
+    --brand:#0ea5e9;    /* sky-500 */
+    --brand-ink:#0b5e88;
+    --surface:#f8fafc;  /* slate-50 */
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg:#0b1020;
+        --fg:#f1f5f9;
+        --muted:#94a3b8;
+        --line:#1f2937;
+        --brand:#38bdf8;
+        --brand-ink:#8ad8ff;
+        --surface:#0f172a;
+    }
+}
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.6;
+}
+
+.container{ max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+.skip-link {
+    position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus { position:static; width:auto; height:auto; padding:8px; background:var(--brand); color:#fff; }
+
+.site-header{
+    position: sticky; top:0; backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in oklab, var(--bg) 80%, transparent);
+    z-index: 10;
+}
+.nav{
+    display:flex; align-items:center; justify-content:space-between; height:64px;
+}
+.brand{ display:flex; align-items:center; gap:10px; font-weight:700; }
+.wordmark{ letter-spacing: .2px; }
+.logo{ display:block; }
+
+.primary-nav a{
+    margin-left: 18px; text-decoration:none; color:var(--fg); font-weight:500;
+}
+.primary-nav a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+.btn{
+    display:inline-block; padding:10px 16px; border-radius:8px; border:1px solid var(--brand);
+    background: var(--brand); color:#fff; font-weight:600; text-decoration:none;
+}
+.btn:hover{ filter: brightness(0.95); }
+.btn--ghost{ background: transparent; color: var(--brand); }
+.btn--sm{ padding:8px 12px; }
+
+.hero{
+    padding: 72px 0 40px; background: radial-gradient(1200px 400px at 50% -120px, var(--surface), transparent);
+}
+h1{ font-size: clamp(30px, 5vw, 44px); line-height:1.2; margin: 0 0 12px; }
+.lede{ font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin:0 0 18px; }
+.hero-cta{ display:flex; gap:12px; margin: 6px 0 16px; }
+.hero-bullets{ margin: 8px 0 0; padding:0 0 0 18px; color: var(--muted); }
+
+.section{ padding: 56px 0; }
+.section--alt{ background: var(--surface); }
+
+.cards{
+    display:grid; grid-template-columns: repeat(12, 1fr); gap:16px; margin-top: 10px;
+}
+.card{
+    grid-column: span 12;
+    border:1px solid var(--line); border-radius:12px; padding:18px; background: var(--bg);
+}
+@media (min-width: 720px){
+    .card{ grid-column: span 6; }
+}
+@media (min-width: 1024px){
+    .card{ grid-column: span 4; }
+}
+
+.proof-grid{
+    display:grid; grid-template-columns: repeat(12, 1fr); gap:16px; margin-top:12px;
+}
+.proof-item{
+    grid-column: span 12; border-left: 3px solid var(--brand); padding: 10px 12px; background: var(--bg); border-radius: 8px; border:1px solid var(--line);
+}
+@media (min-width: 720px){
+    .proof-item{ grid-column: span 4; }
+}
+.proof-title{ font-weight: 700; margin:0 0 4px; }
+
+.logos{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.logo-pill{
+    padding:6px 10px; border:1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--muted);
+}
+
+.ticks{ margin-top:10px; padding-left:20px; }
+.ticks li{ margin: 6px 0; }
+
+.steps{ counter-reset: step; margin: 8px 0 0; padding-left: 20px; }
+.steps li{ margin: 6px 0; }
+
+.contact-ctas{ display:flex; gap:12px; margin-top:10px; flex-wrap:wrap; }
+.contact-note{ color: var(--muted); }
+
+.site-footer{
+    border-top:1px solid var(--line); margin-top: 40px;
+}
+.footer-grid{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:18px 0;
+    flex-wrap:wrap;
+}
+.fineprint{ color: var(--muted); font-size: 13px; max-width: 60ch; }
+.brand--footer .wordmark{ font-weight: 700; }
