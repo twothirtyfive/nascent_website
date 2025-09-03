@@ -1,13 +1,9 @@
 # Nascent Technologies — Website
-Static one-pager for SME blockchain consulting (stablecoins, Cosmos appchains).
 
-## Local preview
-Just open `index.html` in a browser. No build tools required.
-
-## Customize
+## Customization
 - `index.html`: update headlines, outcomes, contact links (Calendly, email domain).
 - `styles.css`: color tokens in `:root`.
-- `assets/logo.svg` and `assets/og-image.png`: replace with your brand.
+- `assets/`
 
 ## Deploy (GitHub Pages)
 1. Push this repo to GitHub.
@@ -18,7 +14,7 @@ Just open `index.html` in a browser. No build tools required.
 4. (Optional) Set a custom domain (see below).
 
 ## Custom domain (optional)
-- Buy a domain (e.g., `nascent.tech`), add a `CNAME` file with the domain, then in **Settings → Pages** set the custom domain and enable HTTPS.
+- Add a `CNAME` file with the domain, then in **Settings → Pages** set the custom domain and enable HTTPS.
 - Configure DNS at your registrar:
     - `CNAME` for `www` → `<username>.github.io`
     - (Optional root) `A` records → `185.199.108.153`, `.109.153`, `.110.153`, `.111.153` (GitHub Pages IPs)
